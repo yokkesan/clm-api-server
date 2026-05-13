@@ -1,0 +1,19 @@
+services:
+  app:
+    image: webdevops/php-apache:8.2
+    container_name: clm_app
+    ports:
+      - "8000:80"
+    volumes:
+      - ./db:/app
+    environment:
+      WEB_DOCUMENT_ROOT: /app/public
+
+  db:
+    image: mysql:8.0
+    container_name: clm_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: clm_db
+    ports:
+      - "3307:3306"

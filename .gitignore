@@ -1,0 +1,10 @@
+.env
+
+/vendor
+/node_modules
+
+db/vendor
+db/node_modules
+
+db/.env
+db/storage/*.key
